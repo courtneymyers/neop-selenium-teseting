@@ -1,0 +1,19 @@
+{
+  "name": "neop-selenium-testing",
+  "version": "0.1.0",
+  "private": true,
+  "description": "BrowserStack testing of NEOP website",
+  "author": "Eastern Research Group, Inc.",
+  "contributors": [
+    "Courtney Myers <courtney.myers@erg.com>"
+  ],
+  "license": "ISC",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "dotenv": "4.0.0",
+    "selenium-webdriver": "3.6.0"
+  }
+}
