@@ -1,0 +1,168 @@
+{
+  "configs": {
+    "common": {
+      "description": "Common Browserstack configuration",
+      "functionalSuites": "tests/functional/**/*.js",
+      "plugins": "./node_modules/dotenv/config",
+      "tunnel": "browserstack",
+      "capabilities": {
+        "name": "NEOP",
+        "browserstack.debug": true,
+        "resolution": "1920x1080"
+      }
+    },
+
+    "mac": {
+      "description": "Current Mac OS browsers",
+      "extends": ["common"],
+      "environments+": [
+        {
+          "os": "OS X",
+          "os_version": "High Sierra",
+          "browserName": "Safari",
+          "browser_version": "11"
+        },
+        {
+          "os": "OS X",
+          "os_version": "High Sierra",
+          "browserName": "Opera",
+          "browser_version": "12.15"
+        },
+        {
+          "os": "OS X",
+          "os_version": "High Sierra",
+          "browserName": "Chrome",
+          "browser_version": "63"
+        },
+        {
+          "os": "OS X",
+          "os_version": "High Sierra",
+          "browserName": "Firefox",
+          "browser_version": "57"
+        }
+      ]
+    },
+
+    "win": {
+      "description": "Current Windows browsers",
+      "extends": ["common"],
+      "environments+": [
+        {
+          "os": "WINDOWS",
+          "os_version": "10",
+          "browserName": "Internet Explorer",
+          "browser_version": "11"
+        },
+        {
+          "os": "WINDOWS",
+          "os_version": "10",
+          "browserName": "Edge",
+          "browser_version": "16"
+        },
+        {
+          "os": "WINDOWS",
+          "os_version": "10",
+          "browserName": "Chrome",
+          "browser_version": "63"
+        },
+        {
+          "os": "WINDOWS",
+          "os_version": "10",
+          "browserName": "Firefox",
+          "browser_version": "57"
+        }
+      ]
+    },
+
+    "current": {
+      "description": "Current Mac OS and Windows browsers",
+      "extends": ["common", "mac", "win"]
+    },
+
+    "safari": {
+      "description": "Old versions of Safari",
+      "extends": "common",
+      "environments+": [
+        {
+          "os": "OS X",
+          "os_version": "Sierra",
+          "browserName": "Safari",
+          "browser_version": "10.1"
+        },
+        {
+          "os": "OS X",
+          "os_version": "El Capitan",
+          "browserName": "Safari",
+          "browser_version": "9.1"
+        },
+        {
+          "os": "OS X",
+          "os_version": "Yosemite",
+          "browserName": "Safari",
+          "browser_version": "8"
+        },
+        {
+          "os": "OS X",
+          "os_version": "Mavericks",
+          "browserName": "Safari",
+          "browser_version": "7.1"
+        },
+        {
+          "os": "OS X",
+          "os_version": "Mountain Lion",
+          "browserName": "Safari",
+          "browser_version": "6.2"
+        },
+        {
+          "os": "OS X",
+          "os_version": "Lion",
+          "browserName": "Safari",
+          "browser_version": "6"
+        },
+        {
+          "os": "OS X",
+          "os_version": "Snow Leopard",
+          "browserName": "Safari",
+          "browser_version": "5.1"
+        }
+      ]
+    },
+
+    "ie": {
+      "description": "Old versions of Internet Explorer",
+      "extends": "common",
+      "environments+": [
+        {
+          "os": "WINDOWS",
+          "os_version": "8.1",
+          "browserName": "Internet Explorer",
+          "browser_version": "11"
+        },
+        {
+          "os": "WINDOWS",
+          "os_version": "8",
+          "browserName": "Internet Explorer",
+          "browser_version": "10"
+        },
+        {
+          "os": "WINDOWS",
+          "os_version": "7",
+          "browserName": "Internet Explorer",
+          "browser_version": "9"
+        },
+        {
+          "os": "WINDOWS",
+          "os_version": "7",
+          "browserName": "Internet Explorer",
+          "browser_version": "8"
+        },
+        {
+          "os": "WINDOWS",
+          "os_version": "XP",
+          "browserName": "Internet Explorer",
+          "browser_version": "7"
+        }
+      ]
+    }
+  }
+}

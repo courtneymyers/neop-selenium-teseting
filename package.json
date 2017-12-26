@@ -13,10 +13,16 @@
     "node": ">=8.9"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "current": "intern config=@current",
+    "mac": "intern config=@mac",
+    "win": "intern config=@win",
+    "safari": "intern config=@safari",
+    "ie": "intern config=@ie"
   },
   "dependencies": {
     "dotenv": "4.0.0",
+    "intern": "4.1.4",
     "selenium-webdriver": "3.6.0"
   }
 }
