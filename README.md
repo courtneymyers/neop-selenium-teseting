@@ -5,9 +5,9 @@ Automated functional tests for the NEOP website using BrowserStack. This project
 ## npm scripts
 - The npm `start` script uses `selenium-webdriver.js` to run a simple test using Safari 11 on Mac OS High Sierra. View `./index.js` to view contents of the simple functional test.
 
+- The npm `config` script shows all child configs set up in the `./intern.json` config file. The file is organized into child configs, each containing configuration for different browsers and/or devices. They can then be run via `intern config=@child-config-key}` (see below).
+
 - The following npm scripts use `intern.js` to run all tests in the `tests/functional/` directory. Browser configuration is set up in `./intern.json`:
-  - `mac` script runs tests on macOS High Sierra for the latest versions of Safari, Opera, Chrome, and Firefox.
-  - `win` script runs tests on Windows 10 for the latest versions of Internet Explorer, Edge, Chrome, and Firefox.
-  - `current` script runs tests included in both `mac` and `win` scripts (latest versions of all major browsers for both macOS and Windows)
-  - `safari` script runs tests for old versions of Safari on legacy versions of macOS/OSX
-  - `ie` script runts tests for old versions of Internet Explorer on legacy versions of Windows
+  - `mac` script runs tests on macOS High Sierra for the latest versions of Safari, Chrome, and Firefox.
+  - `win` script runs tests on Windows 10 for the latest versions of IE, Edge, Chrome, and Firefox.
+  - all other scripts run tests on the mobile device with the given script name (ex. _iPhone X_), using the default browser for that device.
