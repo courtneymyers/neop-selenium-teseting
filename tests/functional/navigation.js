@@ -1,18 +1,18 @@
-const { registerSuite } = intern.getInterface('object');
+const { describe, it, before } = intern.getInterface('bdd');
 const { assert } = intern.getPlugin('chai');
 
-registerSuite('home page', {
-  'navigation'() {
-    return this.remote
-      .maximizeWindow()
-      .get('http://www.neoceanplanning.com')
-      .findByCssSelector('.neop-nav li:first-child a')
-      .click()
-      .end()
-      .sleep(5000)
-      .getPageTitle()
-      .then((title) => assert.strictEqual(
-        title, 'Northeast Ocean Plan | Northeast Ocean Planning')
-      );
-  }
+describe('Website', () => {
+  before(({remote}) => {
+    if (typeof remote.maximizeWindow === 'function') remote.maximizeWindow();
+    return remote.get('https://neoceanplanning.com');
+  });
+
+  it('navigation should work', ({ remote }) => {
+    return remote
+      .findByCssSelector('.neop-nav li:first-child a').click().end()
+      .sleep(10000)
+      .getPageTitle().then((title) => assert.strictEqual(
+        title, 'Northeast Ocean Plan | Northeast Ocean Planning'
+      ));
+  });
 });
