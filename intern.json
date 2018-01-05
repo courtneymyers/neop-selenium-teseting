@@ -1,9 +1,12 @@
 {
-  "functionalSuites": "tests/functional/**/*.js",
+  "functionalSuites": [
+    "tests/functional/**/*.js",
+    "!tests/functional/includes/*.js"
+  ],
   "plugins": "./node_modules/dotenv/config",
   "tunnel": "browserstack",
   "capabilities": {
-    "project": "NEOP.com",
+    "project": "NEOP_20180105",
     "browserstack.debug": true
   },
 
