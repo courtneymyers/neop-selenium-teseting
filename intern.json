@@ -1,17 +1,22 @@
 {
-  "functionalSuites": "tests/functional/**/*.js",
+  "functionalSuites": [
+    "tests/functional/**/*.js",
+    "!tests/functional/includes/*.js"
+  ],
   "plugins": "./node_modules/dotenv/config",
   "tunnel": "browserstack",
   "capabilities": {
-    "project": "NEOP",
-    "name": "NEOP",
+    "project": "NEOP_20180105",
     "browserstack.debug": true
   },
 
   "configs": {
     "mac": {
-      "description": "Common Mac OS browsers",
-      "capabilities+": { "resolution": "1920x1080" },
+      "description": "Latest Mac OS browsers",
+      "capabilities+": {
+        "name": "LatestMacOS",
+        "resolution": "1920x1080"
+      },
       "environments+": [
         {
           "os": "OS X",
@@ -34,8 +39,11 @@
 
 
     "win": {
-      "description": "Common Windows browsers",
-      "capabilities+": { "resolution": "1920x1080" },
+      "description": "Latest Windows browsers",
+      "capabilities+": {
+        "name": "LatestWindows",
+        "resolution": "1920x1080"
+      },
       "environments+": [
         {
           "os": "WINDOWS",
@@ -66,6 +74,7 @@
       "description": "iPhone X, iOS 11",
       "environments": { "browser": "iPhone" },
       "capabilities+": {
+        "name":"iPhoneX",
         "device": "iPhone X",
         "os_version": "11.0",
         "real_mobile": "true"
@@ -76,6 +85,7 @@
       "description": "iPhone 8 Plus, iOS 11",
       "environments": { "browser": "iPhone" },
       "capabilities+": {
+        "name": "iPhone8Plus",
         "device": "iPhone 8 Plus",
         "os_version": "11.0",
         "real_mobile": "true"
@@ -86,6 +96,7 @@
       "description": "iPhone 8, iOS 11",
       "environments": { "browser": "iPhone" },
       "capabilities+": {
+        "name": "iPhone8",
         "device": "iPhone 8",
         "os_version": "11.0",
         "real_mobile": "true"
@@ -96,6 +107,7 @@
       "description": "iPhone 7 Plus, iOS 10",
       "environments": { "browser": "iPhone" },
       "capabilities+": {
+        "name": "iPhone7Plus",
         "device": "iPhone 7 Plus",
         "os_version": "10.3",
         "real_mobile": "true"
@@ -106,6 +118,7 @@
       "description": "iPhone 7, iOS 10",
       "environments": { "browser": "iPhone" },
       "capabilities+": {
+        "name": "iPhone7",
         "device": "iPhone 7",
         "os_version": "10.3",
         "real_mobile": "true"
@@ -116,6 +129,7 @@
       "description": "iPhone 6S Plus, iOS 9",
       "environments": { "browser": "iPhone" },
       "capabilities+": {
+        "name": "iPhone6SPlus",
         "device": "iPhone 6S Plus",
         "os_version": "9.1"
       }
@@ -125,6 +139,7 @@
       "description": "iPhone 6S, iOS 9",
       "environments": { "browser": "iPhone" },
       "capabilities+": {
+        "name": "iPhone6S",
         "device": "iPhone 6S",
         "os_version": "9.1"
       }
@@ -136,6 +151,7 @@
       "description": "iPad 5th, iOS 11",
       "environments": { "browser": "iPad" },
       "capabilities+": {
+        "name": "iPad5",
         "device": "iPad 5th",
         "os_version": "11.0",
         "real_mobile": "true"
@@ -146,6 +162,7 @@
       "description": "iPad Pro, iOS 9",
       "environments": { "browser": "iPad" },
       "capabilities+": {
+        "name": "iPadPro",
         "device": "iPad Pro",
         "os_version": "9.1"
       }
@@ -155,6 +172,7 @@
       "description": "iPad Mini 4, iOS 9",
       "environments": { "browser": "iPad" },
       "capabilities+": {
+        "name": "iPadMini4",
         "device": "iPad Mini 4",
         "os_version": "9.1"
       }
@@ -164,6 +182,7 @@
       "description": "iPad Air 2, iOS 9",
       "environments": { "browser": "iPad" },
       "capabilities+": {
+        "name": "iPadAir2",
         "device": "iPad Air 2",
         "os_version": "9.1"
       }
@@ -175,6 +194,7 @@
       "description": "Google Pixel, Android 8.0",
       "environments": { "browser": "Android" },
       "capabilities+": {
+        "name": "Pixel",
         "device": "Google Pixel",
         "os_version": "8.0",
         "real_mobile": "true"
@@ -185,6 +205,7 @@
       "description": "Google Nexus 6, Android 6.0",
       "environments": { "browser": "Android" },
       "capabilities+": {
+        "name": "Nexus6",
         "device": "Google Nexus 6",
         "os_version": "6.0",
         "real_mobile": "true"
@@ -195,6 +216,7 @@
       "description": "Google Nexus 5, Android 4.4",
       "environments": { "browser": "Android" },
       "capabilities+": {
+        "name": "Nexus5",
         "device": "Google Nexus 5",
         "os_version": "4.4",
         "real_mobile": "true"
@@ -205,6 +227,7 @@
       "description": "Samsung Galaxy Note 8, Android 7.1",
       "environments": { "browser": "Android" },
       "capabilities+": {
+        "name": "GalaxyNote8",
         "device": "Samsung Galaxy Note 8",
         "os_version": "7.1",
         "real_mobile": "true"
@@ -215,6 +238,7 @@
       "description": "Samsung Galaxy S8 Plus, Android 7.0",
       "environments": { "browser": "Android" },
       "capabilities+": {
+        "name": "GalaxyS8Plus",
         "device": "Samsung Galaxy S8 Plus",
         "os_version": "7.0",
         "real_mobile": "true"
@@ -225,6 +249,7 @@
       "description": "Samsung Galaxy S8, Android 7.0",
       "environments": { "browser": "Android" },
       "capabilities+": {
+        "name": "GalaxyS8",
         "device": "Samsung Galaxy S8",
         "os_version": "7.0",
         "real_mobile": "true"
@@ -235,6 +260,7 @@
       "description": "Samsung Galaxy S7, Android 6.0",
       "environments": { "browser": "Android" },
       "capabilities+": {
+        "name": "GalaxyS7",
         "device": "Samsung Galaxy S7",
         "os_version": "6.0",
         "real_mobile": "true"
@@ -245,6 +271,7 @@
       "description": "Samsung Galaxy S6, Android 5.0",
       "environments": { "browser": "Android" },
       "capabilities+": {
+        "name": "GalaxyS6",
         "device": "Samsung Galaxy S6",
         "os_version": "5.0",
         "real_mobile": "true"
@@ -255,6 +282,7 @@
       "description": "Motorola Moto X 2nd Gen, Android 6.0",
       "environments": { "browser": "Android" },
       "capabilities+": {
+        "name": "MotoX2",
         "device": "Motorola Moto X 2nd Gen",
         "os_version": "6.0",
         "real_mobile": "true"
@@ -267,6 +295,7 @@
       "description": "Samsung Galaxy Note 4, Android 6.0",
       "environments": { "browser": "Android" },
       "capabilities+": {
+        "name": "GalaxyNote4",
         "device": "Samsung Galaxy Note 4",
         "os_version": "6.0",
         "real_mobile": "true"
@@ -277,6 +306,7 @@
       "description": "Samsung Galaxy Tab 4, Android 4.4",
       "environments": { "browser": "Android" },
       "capabilities+": {
+        "name": "GalaxyTab4",
         "device": "Samsung Galaxy Tab 4",
         "os_version": "4.4",
         "real_mobile": "true"
@@ -287,6 +317,7 @@
       "description": "Google Nexus 9, Android 5.1",
       "environments": { "browser": "Android" },
       "capabilities+": {
+        "name": "Nexus9",
         "device": "Google Nexus 9",
         "os_version": "5.1",
         "real_mobile": "true"
