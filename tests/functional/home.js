@@ -7,16 +7,13 @@ describe('Homepage', () => {
   });
 
   it('scrolling for BrowserStack video', async ({ remote }) => {
-    await remote.setExecuteAsyncTimeout(10000);
-    await remote.executeAsync((callback) => {
-      const height = document.body.scrollHeight;
-      const duration = height / 200 * 1000; // 200px per second
-      // executeAsync() expects a promise as the returned value
-      return new Promise(async () => {
-        await jQuery('html, body').animate({ scrollTop: height }, duration);
-        await callback();
-      });
+    // set asyncExecute timeout to 2 minutes to account for scrolling long pages
+    await remote.setExecuteAsyncTimeout(120000)
+    await remote.executeAsync(function(callback) {
+      var height = document.body.scrollHeight;
+      var duration = height / 200 * 1000; /* 200px per second */
+      jQuery('html, body').animate({ scrollTop: height }, duration, callback);
     });
-    await remote.sleep(10000);
+    await remote.sleep(2000);
   });
 });
