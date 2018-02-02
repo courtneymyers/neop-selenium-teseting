@@ -3,7 +3,7 @@ const scrollPage = require('./includes/scrollPage.js');
 
 describe('Plan', () => {
   before(async ({ remote }) => {
-    await remote.get('https://neoceanplanning.com/plan');
+    await remote.get('https://neoceanplanning.org/plan');
     await remote.sleep(2000);
   });
 

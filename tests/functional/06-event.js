@@ -3,7 +3,7 @@ const scrollPage = require('./includes/scrollPage.js');
 
 describe('Event', () => {
   before(async ({ remote }) => {
-    await remote.get('https://neoceanplanning.com/event/nrpb-data-workshop/');
+    await remote.get('https://neoceanplanning.org/event/nrpb-data-workshop/');
     await remote.sleep(2000);
   });
 
