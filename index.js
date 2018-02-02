@@ -3,9 +3,9 @@ const webdriver = require('selenium-webdriver');
 const config = require('dotenv').config();
 
 const browser = {
-  'os': 'OS X',
-  'os_version': 'High Sierra',
-  'browserName': 'Safari',
+  'os': 'Windows',
+  'os_version': '10',
+  'browserName': 'IE',
   'browser_version': '11.0'
 }
 
@@ -23,7 +23,7 @@ const driver = new webdriver.Builder()
 
 // maximize browser window and navigate to site
 driver.manage().window().maximize();
-driver.get('http://www.neoceanplanning.com');
+driver.get('http://www.neoceanplanning.org');
 // click 'Plan' navigation link and check resulting page title
 driver.findElement(webdriver.By.css('.neop-nav li:first-child a')).click();
 driver.sleep(5000);
